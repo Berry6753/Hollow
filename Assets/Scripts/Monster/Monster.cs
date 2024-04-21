@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    private Animator animator;
     public GameObject monster;
     private Player player;
 
@@ -15,7 +15,6 @@ public class Monster : MonoBehaviour
     private void Awake()
     {
         player = FindObjectOfType<Player>();
-        animator = GetComponent<Animator>();    
         monster.SetActive(true);
     }
 
@@ -29,7 +28,6 @@ public class Monster : MonoBehaviour
 
     private void Die()
     {
-        animator.SetTrigger("Die");
         StartCoroutine(MarkDie());
     }
     private IEnumerator MarkDie()

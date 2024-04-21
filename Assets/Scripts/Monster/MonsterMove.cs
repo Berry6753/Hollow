@@ -1,44 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class MonsterMove : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
+    protected Rigidbody2D rb;
+    protected SpriteRenderer spriteRenderer;
+    protected Animator animator;
 
-    private Monster monster;
+    protected Monster monster;
 
     public int nextMove;
-    private float nextThink;
-    private int hp;
+    protected float nextThink;
+    protected bool isDie = false;
+    protected int hp;
+
+    public int length;
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         monster = GetComponent<Monster>();
         Invoke("Think", nextThink);
     }
 
+    private void Update()
+    {
+        Die();
+    }
     private void FixedUpdate()
+    {
+        Move(length);
+        StopDie();
+    }
+    protected void Move(int ray)
     {
         //기본 움직임
         rb.velocity = new Vector2(nextMove, rb.velocity.y);
         if (nextMove == -1)
         {
-            spriteRenderer.flipX = false;        
+            spriteRenderer.flipX = false;
         }
-        else if(nextMove == 1) 
+        else if (nextMove == 1)
         {
             spriteRenderer.flipX = true;
         }
-        StopDie();
 
         //지형체크
-        Vector2 frontVec = new Vector2(rb.position.x + nextMove*0.5f, rb.position.y);
-        Debug.DrawRay(frontVec, Vector2.down, new Color(0, 1, 0));
-        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector2.down, 1, LayerMask.GetMask("Platform"));
+        Vector2 frontVec = new Vector2(rb.position.x + nextMove * 0.5f, rb.position.y);
+        Debug.DrawRay(frontVec, Vector2.down, new Color(0, ray, 0));
+        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector2.down, ray, LayerMask.GetMask("Platform"));
         if (rayHit.collider == null)
         {
             nextMove *= -1;
@@ -47,7 +62,7 @@ public class MonsterMove : MonoBehaviour
         }
     }
 
-    private void Think()
+    protected void Think()
     {
         nextMove = Random.Range(-1, 2);
         nextThink = Random.Range(2, 6);
@@ -55,13 +70,29 @@ public class MonsterMove : MonoBehaviour
         Invoke("Think", nextThink);
     }
 
-    private void StopDie()
-    { 
+    protected void StopDie()
+    {
         hp = monster.hp;
-        if (hp <= 0)
+        if (hp <= 0 )
         {
             rb.velocity = Vector2.zero;
             CancelInvoke();
         }
+    }
+
+    protected void Die()
+    {
+        hp = monster.hp;
+        if (hp <= 0 && isDie == false)
+        {
+            StartCoroutine(DieMotion());
+        }
+    }
+    protected IEnumerator DieMotion()
+    {
+        isDie = true;
+        animator.SetTrigger("Die");
+        yield return new WaitForSeconds(60f);
+        isDie = false;
     }
 }
