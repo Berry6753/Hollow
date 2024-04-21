@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Platform
+  - Attack
+  - Monster
+  - Fall Zone
+  - Fake Knight
+  - Hornet
+  - Skill
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - background
+  - Water
+  - UI
+  - 
+  - 
+  - Platform
+  - Monster
+  - Player
+  - PlayerDamaged
+  - MonsterDie
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: backgrournd
+    uniqueID: 2313641935
+    locked: 0
+  - name: middleground
+    uniqueID: 1490998059
+    locked: 0
+  - name: middleground+
+    uniqueID: 1957074379
+    locked: 0
+  - name: Monster
+    uniqueID: 2554409083
+    locked: 0
+  - name: player
+    uniqueID: 882346717
+    locked: 0
+  - name: foreground
+    uniqueID: 1904526093
+    locked: 0
+  - name: UI
+    uniqueID: 2721981147
+    locked: 0
