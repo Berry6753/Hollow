@@ -14,4 +14,12 @@ public class GameSceneManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         SceneManager.LoadScene("Main");
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("FalseKnight");
+        }
+    }
 }
