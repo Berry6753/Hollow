@@ -38,15 +38,19 @@ public class HuskMove : MonsterMove
     private void Attack()
     {
         Vector2 dirVec = target.position - rb.position;
-        Collider2D cols = Physics2D.OverlapCircle(transform.position, 10f);
-        if (cols.CompareTag("Player") && isDash == false)
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 10f);
+        for (int i = 0; i < cols.Length; i++)
         {
-            CancelInvoke();
-            animator.SetTrigger("Recog");
-            animator.SetBool("Attack", true);
-            StartCoroutine(Dash(dirVec));
-            animator.SetBool("Attack", false);
-            Invoke("Think", nextThink);
+            Debug.Log($"{cols[i]}");
+            if (cols[i].CompareTag("Player") && isDash == false)
+            {
+                Debug.Log("»ì·ÁÁà");
+                animator.SetTrigger("Recog");
+                animator.SetBool("Attack", true);
+                StartCoroutine(Dash(dirVec));
+                animator.SetBool("Attack", false);
+                Invoke("Think", nextThink);
+            }
         }
     }
     private IEnumerator Dash(Vector2 pos)

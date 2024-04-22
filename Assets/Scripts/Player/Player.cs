@@ -91,9 +91,8 @@ public class Player : MonoBehaviour
         isDie = true;
         gameObject.layer = 13;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        yield return new WaitForSeconds(0.1f);
         gameObject.transform.position = new Vector2(65, 20);
         gameObject.layer = 10;
         hp = 4;
