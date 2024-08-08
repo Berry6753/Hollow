@@ -340,6 +340,7 @@ GameObject:
   - component: {fileID: 343916364}
   - component: {fileID: 343916363}
   - component: {fileID: 343916362}
+  - component: {fileID: 343916365}
   m_Layer: 9
   m_Name: False Knight
   m_TagString: Monster
@@ -436,6 +437,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &343916365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343916361}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startWhenEnabled: 1
+  asynchronousLoad: 0
+  pauseWhenDisabled: 0
+  restartWhenComplete: 0
+  logTaskChanges: 0
+  group: 0
+  resetValuesOnRestart: 0
+  externalBehavior: {fileID: 0}
+  mBehaviorSource:
+    behaviorName: Behavior
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(443,12)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(0.7233801,120.319084)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(0.9515381,115.418)"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-283.604645,125.43927)"},"ID":3,"Name":"AttackSequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BTC_CheckDistance","NodeData":{"Offset":"(-149.516769,145.154755)"},"ID":4,"Name":"BTC  
+        Check Distance","Instant":true,"SharedFloatrange":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"AttackRange","IsShared":true,"SinglemValue":5}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-112.041473,134.449661)"},"ID":5,"Name":"TraceSequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BTC_CheckDistance","NodeData":{"Offset":"(218.374512,164.385254)"},"ID":6,"Name":"BTC  
+        Check Distance","Instant":true,"SharedFloatrange":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"TraceRange","IsShared":true,"SinglemValue":10}}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"AttackRange","IsShared":true,"SinglemValue":5},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"TraceRange","IsShared":true,"SinglemValue":10}]}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects: []
+        byteData: 
+        byteDataArray: 
+      Version: 1.7.8
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!1 &466889040
 GameObject:
   m_ObjectHideFlags: 0
