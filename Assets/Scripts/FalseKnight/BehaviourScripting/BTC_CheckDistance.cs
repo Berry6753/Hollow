@@ -4,15 +4,9 @@ using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
 using BehaviorDesigner.Runtime;
 
-public class BTC_CheckDistance : Conditional
+public class BTC_CheckDistance : FalseKnightConditional
 {
-    public FalseKnightController falseKnight;
-    [SerializeField] private SharedFloat range;
-
-    public override void OnAwake()
-    {
-        falseKnight = GetComponent<FalseKnightController>();
-    }
+    [SerializeField] private SharedFloat _range;
 
     public override TaskStatus OnUpdate()
     {
@@ -22,7 +16,7 @@ public class BTC_CheckDistance : Conditional
             return TaskStatus.Failure;
         }
 
-        if (falseKnight.CheckDistance(range.Value))
+        if (falseKnight.CheckDistance(_range.Value))
         { 
             return TaskStatus.Success;
         }

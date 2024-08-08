@@ -351,49 +351,49 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Jump
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Run
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Trace
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Groggy
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: GroggyHit
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Ground
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -772,16 +772,16 @@ AnimatorStateMachine:
   - {fileID: 2141110982701889877}
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 1996386140844218779}
-    second:
-    - {fileID: 70394512472777097}
-  - first: {fileID: 1555525829712528667}
-    second:
-    - {fileID: -6893341397250552275}
   - first: {fileID: -3428801607145142489}
     second:
     - {fileID: -491368766849838604}
     - {fileID: -5081271433277802438}
+  - first: {fileID: 1555525829712528667}
+    second:
+    - {fileID: -6893341397250552275}
+  - first: {fileID: 1996386140844218779}
+    second:
+    - {fileID: 70394512472777097}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 280, y: -50, z: 0}
   m_EntryPosition: {x: -200, y: 10, z: 0}

@@ -8,12 +8,15 @@ public class FalseKnightController : MonoBehaviour
     [SerializeField] private float _hp;
     [SerializeField] private float _maxHp;
     [SerializeField] private float _damage;
-    [SerializeField] private float _attackRange;
+
+    private Rigidbody2D _rb;
 
     private Transform _playerTr;
 
     private void Awake()
     {
+        _rb = GetComponent<Rigidbody2D>();
+
         _playerTr = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
