@@ -16,8 +16,8 @@ public class BTA_Move : FalseKnightAction
     }
 
     public override TaskStatus OnUpdate()
-    {  
-        //falseKnight.transform.Translate()
+    {
+        falseKnight.MoveFalseKnight(_speed.Value);
 
         return TaskStatus.Success;
     }

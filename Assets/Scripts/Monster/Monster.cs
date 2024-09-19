@@ -10,12 +10,20 @@ public class Monster : MonoBehaviour
     private Player player;
 
     public int hp;
+    private int maxhp;
     private bool isDie = false;
 
     private void Awake()
     {
+        maxhp = hp;
         player = FindObjectOfType<Player>();
         monster.SetActive(true);
+    }
+
+    private void OnEnable()
+    {
+        hp = maxhp;
+        isDie = false;
     }
 
     private void Update()
